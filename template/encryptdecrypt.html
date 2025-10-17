@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Smart Logging..!!</title>
+	
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Favicon icon -->
+    <link rel="icon" href=" {{ url_for('static',filename='images/favicon.ico') }}" type="image/x-icon">
+    <!-- Google font--><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,800" rel="stylesheet">
+    <!-- Required Fremwork -->
+    <link rel="stylesheet" type="text/css" href=" {{ url_for('static',filename='css/bootstrap/css/bootstrap.min.css') }}">
+    <!-- themify-icons line icon -->
+    <link rel="stylesheet" type="text/css" href=" {{ url_for('static',filename='icon/themify-icons/themify-icons.css') }}">
+    <!-- ico font -->
+    <link rel="stylesheet" type="text/css" href=" {{ url_for('static',filename='icon/icofont/css/icofont.css') }}">
+    <!-- Style.css -->
+    <link rel="stylesheet" type="text/css" href=" {{ url_for('static',filename='css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href=" {{ url_for('static',filename='css/jquery.mCustomScrollbar.css') }}">
+
+</head>
+
+<body>
+    <!-- Pre-loader start -->
+    <div class="theme-loader">
+        <div class="ball-scale">
+            <div class='contain'>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+                <div class="ring"><div class="frame"></div></div>
+            </div>
+        </div>
+    </div>
+    <!-- Pre-loader end -->
+    <div id="pcoded" class="pcoded">
+        <div class="pcoded-overlay-box"></div>
+        <div class="pcoded-container navbar-wrapper">
+
+            <nav class="navbar header-navbar pcoded-header">
+                <div class="navbar-wrapper">
+
+                    <div class="navbar-logo">
+                        <a class="mobile-menu" id="mobile-collapse" href="#!">
+                            <i class="ti-menu"></i>
+                        </a>
+                        <a class="mobile-search morphsearch-search" href="#">
+                            <i class="ti-search"></i>
+                        </a>
+                        <a href="index.html">
+                            <img class="img-fluid" src="assets/images/logo.png" alt="Theme-Logo" />
+                        </a>
+                        <a class="mobile-options">
+                            <i class="ti-more"></i>
+                        </a>
+                    </div>
+
+                    <div class="navbar-container container-fluid">
+                        <ul class="nav-left">
+                            <li>
+                                <div class="sidebar_toggle"><a href="javascript:void(0)"><i class="ti-menu"></i></a></div>
+                            </li>
+                            
+                            <li>
+                                <a href="#!" onclick="javascript:toggleFullScreen()">
+                                    <i class="ti-fullscreen"></i>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="nav-right">
+                            <li class="user-profile header-notification">
+                                <a href="#!">
+                                    <img src="https://cdn3.iconfinder.com/data/icons/avatar-profession-2/512/Avatar_17_-_Professions_-_Background-15-512.png" class="img-radius" alt="User-Profile-Image">
+                                    <i class="ti-angle-down"></i>
+                                </a>
+                                <ul class="show-notification profile-notification">
+                                    <li>
+                                        <a href="{{url_for('Logout')}}">
+                                            <i class="ti-layout-sidebar-left"></i> Logout
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </nav>
+
+            <div class="pcoded-main-container">
+                <div class="pcoded-wrapper">
+                    <nav class="pcoded-navbar">
+                        <div class="sidebar_toggle"><a href="#"><i class="icon-close icons"></i></a></div>
+                        <div class="pcoded-inner-navbar main-menu">
+                            <div class="">
+                                <div class="main-menu-header">
+                                    <img class="img-40 img-radius" src="https://cdn3.iconfinder.com/data/icons/avatar-profession-2/512/Avatar_17_-_Professions_-_Background-15-512.png" alt="User-Profile-Image">
+                                    <div class="user-details">
+                                        <span>{{FName}}</span>
+                                        <span id="more-details">{{ Usename | lower}}<i class="ti-angle-down"></i></span>
+                                    </div>
+                                </div>
+
+                                <div class="main-menu-content">
+                                    <ul>
+                                        <li class="more-details">
+                                            <a href="#"><i class="ti-user"></i>View Profile</a>
+                                            <a href="#!"><i class="ti-settings"></i>Settings</a>
+                                            <a href="auth-normal-sign-in.html"><i class="ti-layout-sidebar-left"></i>Logout</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                           
+                            <div class="pcoded-navigatio-lavel" data-i18n="nav.category.navigation">Navigation</div>
+                            <ul class="pcoded-item pcoded-left-item">
+                                <li class="">
+                                    <a href="{{url_for('UserStat')}}">
+                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">User Details</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                                <li class="">
+                                    <a href="{{url_for('register_nav')}}">
+                                        <span class="pcoded-micon"><i class="ti-home"></i><b>D</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Add User</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            
+								<li class="">
+                                    <a href="{{ url_for('encry_nav')}}">
+                                        <span class="pcoded-micon"><i class="ti-check-box"></i><b>D</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Encrypt/Decrypt</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+								<li class="">
+                                    <a href="{{ url_for('clear_all')}}">
+                                        <span class="pcoded-micon"><i class="ti-check-box"></i><b>D</b></span>
+                                        <span class="pcoded-mtext" data-i18n="nav.dash.main">Clear All</span>
+                                        <span class="pcoded-mcaret"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <div class="pcoded-content">
+                        <div class="pcoded-inner-content">
+
+                            <div class="main-body">
+                                <div class="page-wrapper">
+                                   
+                                    <div class="page-header card">
+                                        <div class="row align-items-end">
+                                            <div class="col-lg-12">
+                                                <div class="page-header-title">
+                                                    <i class="ti-text bg-c-blue"></i>
+                                                    <div class="d-inline">
+                                                        <a href="http://"><h4>Encrypt/Decrypt</h4></a>
+                                                        <span>Encrypt/Decrypt Face Templates </span>
+                                                    </div>
+                        
+                                                   
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <br><br>
+    {% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% block body %}{% endblock %}
+                                    <form action="{{ url_for('encrypt_decrypt_faces') }}" method="POST">
+									
+                                        <div class="input-group">
+                                    <input type="text" name="key" class="form-control" placeholder="enter key" required>
+                                    <span class="md-line"></span>
+                                </div>
+                                    
+                                    <br>
+                                    <center><button type="submit" class="btn btn-primary">Encrypt/Decrypt</button></center>
+                                    </form>
+                                  
+                                    <div class="col-sm-12">
+                                        <div id="gauge" style="width:300px; height:240px; margin: 0 auto;"></div> 
+                                    </div>
+                            </div>
+                            <div id="styleSelector">
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script type=text/javascript>
+    $SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+    </script>
+    
+    <script type=text/javascript>
+    
+    $(function() {
+        $('a#calculate').bind('click', function() {
+        $.getJSON($SCRIPT_ROOT + '/_compute', {
+            sentence: $('textarea[name="sentence"]').val()}, function(data) {
+            g.refresh(data.result);
+        });
+        return false;
+        });
+    });
+    
+    var g;
+    var g = new JustGage({
+        id: "gauge", 
+        value: 50, 
+        min: 0,
+        max: 100,
+        gaugeWidthScale : 1.0,
+        levelColors : [  "#FFFF00", "#32127a",  "#FF0000" ],
+        title: "Spam Detection Score",
+        titleFontColor : "#000099",
+        labelFontColor : "black"
+    }); 
+</script> 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/justgage/1.1.0/justgage.min.js" integrity="sha512-VXlrXhnS8C1X1VKDhCWUEG5y8a4qVCdckEbtwt7D6Fz50NFB4dqDBrrv8WhZFFAbHyl2w4p8QPOpPxV0/UNWFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- Required Jquery -->
+<script type="text/javascript" src="{{ url_for('static',filename='js/jquery/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='js/jquery-ui/jquery-ui.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='js/popper.js/popper.min.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='js/bootstrap/js/bootstrap.min.js') }}"></script>
+<!-- jquery slimscroll js -->
+<script type="text/javascript" src="{{ url_for('static',filename='js/jquery-slimscroll/jquery.slimscroll.js') }}"></script>
+<!-- modernizr js -->
+<script type="text/javascript" src="{{ url_for('static',filename='js/modernizr/modernizr.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static',filename='js/modernizr/css-scrollbars.js') }}"></script>
+<!-- classie js -->
+<script type="text/javascript" src="{{ url_for('static',filename='js/classie/classie.js') }}"></script>
+<!-- Custom js -->
+<script type="text/javascript" src="{{ url_for('static',filename= 'js/script.js') }}"></script>
+<script src="{{ url_for('static',filename='js/pcoded.min.js') }}"></script>
+<script src="{{ url_for('static',filename='js/demo-12.js') }}"></script>
+<script src="{{ url_for('static',filename='js/jquery.mCustomScrollbar.concat.min.js') }}"></script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+tensorflow = 2.11.0
+keras = 2.11.0
+flask
+mysql-connector
+
+go to project folder
+
+python app.py
+
+admin login
+admin@gmail.com
+admin
+
+user login
+face

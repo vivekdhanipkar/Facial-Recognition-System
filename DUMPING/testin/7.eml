@@ -1,0 +1,99 @@
+Delivered-To: testingprojects2021.22@gmail.com
+Received: by 2002:a19:c187:0:0:0:0:0 with SMTP id r129csp252875lff;
+        Wed, 2 Jun 2021 06:12:29 -0700 (PDT)
+X-Received: by 2002:a9d:5a12:: with SMTP id v18mr25110492oth.306.1622639548946;
+        Wed, 02 Jun 2021 06:12:28 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1622639548; cv=none;
+        d=google.com; s=arc-20160816;
+        b=prrTOrZmsPcRh4P4Ria1s+AMWP0iSgTuLKR+Bvozr84g3YPzP7SRNpKnCkg+Am7ZqC
+         sUOwNNed24vqEqG5y2y7GA2aUwaZNtAennaYzzDxEB8gOL8zPBOXepUxHvD3KzzTUjm5
+         a5EKYt42rdCsKmwCkRkjDP97BYhQlbiFS/XoBM3VakLvjB/ugG64BWhuEUdGh2H9BzxC
+         se690nIPeQT9OCuPSojqnkPzMiIEmW5kEJXc6hVCVfzTRDbhmfx1Ek1JZ6269A45xA/5
+         tv9+0/T6YXklbhTQU3c8Qka2Sx+pA7AldlH41/km0g2y+EPVDO/doZiRX8BfGAfeirty
+         krOw==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=auleTs3iHnOXn/mS6Qe4mH5vMi3bwaRl9PwwsWc5S9I=;
+        b=iSuBBP2VlhhNbl/XO0KQ5lKeTpK/9vkdtWWGJvLJqn27AZjSFtRo4mci0rviXGvFiU
+         ashHpY35fWrny5z4GLN7gsenZbfh1JHlEKt2c5fL+LBLgBlifkS70cdB9famFnyEsKCB
+         SXZSEatQJsGrJg/lggDdfSxGxqg3BfrRK2yVtDH0TYInMK8MCuKtJR23SnMZvQMgk0j8
+         kXMLN1uuHuJN3TsgAaCE0kAoVIPRvu+6qCRhsXROi+FxYxWKDDeYR2CSEjHZEfJg6DWr
+         HHGT7j948auGtFGa46n+cPHEN7LdKYqhgQu3Xnb0sNiLcaTI6D2WeLbR19/pA0Ms2wxP
+         vodg==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=KSiTVvyD;
+       spf=pass (google.com: domain of thephoenixzone@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=thephoenixzone@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <thephoenixzone@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id m7sor3763355ote.10.2021.06.02.06.12.27
+        for <testingprojects2021.22@gmail.com>
+        (Google Transport Security);
+        Wed, 02 Jun 2021 06:12:28 -0700 (PDT)
+Received-SPF: pass (google.com: domain of thephoenixzone@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=KSiTVvyD;
+       spf=pass (google.com: domain of thephoenixzone@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=thephoenixzone@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:from:date:message-id:subject:to;
+        bh=auleTs3iHnOXn/mS6Qe4mH5vMi3bwaRl9PwwsWc5S9I=;
+        b=KSiTVvyDMaPT7g0mjTYulPuOyAhSecgUmFcBLvBG1kTdQfcUTJi8tGAvAndhpReUvs
+         0/u9siKMgDTv+lj9O99U65A5HqKZQpMBuBdjVA8T9jA0bnyUufHkWLB4e28kwjc6qokI
+         MsHaxBxK+whHvMh0aj5HSv48wcDxuO1dJekXNE1XYD2m6r3utg0c9d+6Lg5OUUnEQGuh
+         IdThF9AixKgzZQH6k7kCMlZ3sye68Awe2SvK1myAz/eesETUZBQPXNqxklA5d47gqU+g
+         fSITYwJhWQVGbf+we1lq5ixk7MD34C5ZQvYmbmWykrS3stgpj3ZsYlmBj6YwfjEoRE1P
+         yxwA==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+        bh=auleTs3iHnOXn/mS6Qe4mH5vMi3bwaRl9PwwsWc5S9I=;
+        b=YaTnX6ePwJfrFSHFap7gmwkORQ+GD6TCfVUr0K5w/1yOx4hjstRWJ5rZnAX2FkGHTd
+         oafsysQDuUR7HDFFHwCC+uNnn6E5JCTveAfV7cXIzj40J/dIx0SxyRsRgeKBFFgf+BLu
+         IWuDog1joIXIocNLSS0ESM6AdHtSg9Lq470oxu7I7mzn+5XWoaXS9JMOTOfHelrMn3Bq
+         ufy331qfr8Dkw/ynQNmsIEa0ROfJgBmJ7nWFk5tHp+3w9j5T4/9ki/08phNJwOzWf7nM
+         1XqmmZcj/vvlyRxdgLQ1CfZxWwljVRQsaLtUKR/968gFS0nFrxIIKLW4L7ZHVw9af25D
+         dYfg==
+X-Gm-Message-State: AOAM532IZ4rZggQMam6FXn0OAJTe3JefyrQgSLqqUbVBkwzMYnJA4a3p
+	Mc1u/FnJlx5dLWUJAV1L8YbZhTP2pQ2p2owVzyuXVokUw1Q=
+X-Google-Smtp-Source: ABdhPJyLygYCB2YMgAO487weMSzanCNhWUwRlNi/8r87nIeg2h0FKdlI/Q1zMOS9GqJlnygClT03oqRhtpR9bX5UWD8=
+X-Received: by 2002:a05:6830:110:: with SMTP id i16mr25788217otp.249.1622639547214;
+ Wed, 02 Jun 2021 06:12:27 -0700 (PDT)
+MIME-Version: 1.0
+From: PhoenixZone Technologies <thephoenixzone@gmail.com>
+Date: Wed, 2 Jun 2021 18:42:15 +0530
+Message-ID: <CAGbSqeqKz9E6nJ13JZvrPEM+0phGh=jxYNkXN32GU1y96BsBkg@mail.gmail.com>
+Subject: MAil for spam detection
+To: testingprojects2021.22@gmail.com
+Content-Type: multipart/alternative; boundary="000000000000cf6f5905c3c8356a"
+
+--000000000000cf6f5905c3c8356a
+Content-Type: text/plain; charset="UTF-8"
+
+congratulations you have won the car.... send your account details
+
+--
+
+--000000000000cf6f5905c3c8356a
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">congratulations you have won the car.... send your account=
+ details<br clear=3D"all"><div><br></div>-- <br><div dir=3D"ltr" class=3D"g=
+mail_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div di=
+r=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"lt=
+r"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div=
+ dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D=
+"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><=
+div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=
+=3D"ltr"><span><div dir=3D"ltr"><font face=3D"Monotype Corsiva" size=3D"1">=
+</font><font face=3D"Monotype Corsiva" size=3D"1"></font><div style=3D"font=
+-family:Calibri;font-size:x-small"><br></div><div style=3D"font-family:Cali=
+bri;font-size:x-small"><br></div><div style=3D"font-family:Calibri;font-siz=
+e:x-small"><br></div></div></span><div><div dir=3D"ltr"><div dir=3D"ltr"><d=
+iv></div></div></div></div></div></div></div></div></div></div></div></div>=
+</div></div></div></div></div></div></div></div></div></div></div></div></d=
+iv></div></div></div></div></div>
+
+--000000000000cf6f5905c3c8356a--

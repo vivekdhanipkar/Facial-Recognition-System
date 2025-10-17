@@ -1,0 +1,135 @@
+Delivered-To: testingprojects2021.22@gmail.com
+Received: by 2002:a19:c187:0:0:0:0:0 with SMTP id r129csp87428lff;
+        Wed, 2 Jun 2021 02:10:00 -0700 (PDT)
+X-Received: by 2002:a9d:7286:: with SMTP id t6mr15271274otj.6.1622625000107;
+        Wed, 02 Jun 2021 02:10:00 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1622625000; cv=none;
+        d=google.com; s=arc-20160816;
+        b=cOhVLC1E/HwVNkQ3qL9cYrntSWql+UI2ow6t7K5S62sOK1YK3PyW0dt5hv7gbeJd/p
+         XKyzs49eP6R9Fqtoejjp4f26Zq7/q1fxRT28FxbHKdKJp8AqpkVptB6eKUiqzKxcRnAu
+         a9s7xyKpslsvoC2loYSPN2YO45sNvlcglO4A1dBYaQ0+Afx9W22MAU3P5QhTPpUZP9uM
+         IYc7aOAMBNn0uECWKZ7+zOS/rT6Lcjrcp5w5rWiq7M/du2TSuRE/7zs5iKf42hToMiry
+         iNMPFiPtW7flxFAlU7uTa0Dj3F1GUl7O/7iDmkhgvONI+Us/BNgv3Xg6CUV/VmRs4Sty
+         zCxg==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=pyox6wMsvJV10Ah4Lew+dWNyKKaXY5az70dLvuQ5xAI=;
+        b=SCg7NxmQpGUJLYrYNeaYL5bRUuwTaMqsTQQCeZ0U4UyxORVrNE7MUrZbanI3W5R8bu
+         AT9G4d94sj81ya3hjYpNjoQq7AvhqR/R0RMcoOjV9lVunIh5l9Zv8XwL6uZ07sP20qId
+         3ocbtNkm5G/EsFQuto8wYnN+7mveiYQO4Lk8CkRU7Pv0Va5Vvzro/tqHSQfOOX9GwVMG
+         NG85QRk2ilnwZvzBAOoE0tVjLTpRRM8Og+8vd9X4nxJCAWMwU/P26oMzKV+mmyHej6m5
+         1HCqoe+K2F4diP/fYaljdvrvjI8mwa7yEpEhyKyIec86K26olWpxZ229GFXeg6R7lmno
+         l7rw==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=aENgDcE4;
+       spf=pass (google.com: domain of thephoenixzone@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=thephoenixzone@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+Return-Path: <thephoenixzone@gmail.com>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id a16sor3606234oto.108.2021.06.02.02.09.59
+        for <testingprojects2021.22@gmail.com>
+        (Google Transport Security);
+        Wed, 02 Jun 2021 02:10:00 -0700 (PDT)
+Received-SPF: pass (google.com: domain of thephoenixzone@gmail.com designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@gmail.com header.s=20161025 header.b=aENgDcE4;
+       spf=pass (google.com: domain of thephoenixzone@gmail.com designates 209.85.220.41 as permitted sender) smtp.mailfrom=thephoenixzone@gmail.com;
+       dmarc=pass (p=NONE sp=QUARANTINE dis=NONE) header.from=gmail.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=gmail.com; s=20161025;
+        h=mime-version:from:date:message-id:subject:to;
+        bh=pyox6wMsvJV10Ah4Lew+dWNyKKaXY5az70dLvuQ5xAI=;
+        b=aENgDcE4Q0pe0elh7rrMLq5s/xuqbtrw7qF6CIYTuaraTjpkq+c2rScingrG51O4U/
+         jXBpjXb/4WBgcKznqZZ6uTmap9K7xEl2AkIdR1y/9v3R/5s6LJ2E/X++1ndwdF9erhs6
+         va9IWFOjGvemntJylZZtWhR55Shb4GMViqcVS4PEvKoxFF9dLRf+vJA5Zc5YvG3PU/Ta
+         zCqqRGvgnvQq4G5XiPhglrd8xWYsj21agn251ks3g1H8vzQtL3aKVWnIxhGzD2UNM0HF
+         jMBi2Hp1MYMKY6RrHgcyMOm8wPAoN3iXe2WGcoI0tez/+D9zCKFfzlGS0XqVwYTlsYzh
+         7zIQ==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+        bh=pyox6wMsvJV10Ah4Lew+dWNyKKaXY5az70dLvuQ5xAI=;
+        b=E435er4ELDjejtQ0FpbmS2dS/XwU3HYGLbkcvYEZsKlgMwC8XH2X+5kFCMp+4bP2eP
+         hnItePat+tE2HKKpTcSK9t/bYFExsehJ5Lo1YwKAX/vK/l5cM7CjNS3Ty5fkF2crXqzN
+         ZsHJ4aeE3JrUrxrSl6+pWxfLRP2zEIbhtrr6CfwJtcv1BJht9fATIWuAgZY8JDHZNezt
+         uRr+fPZA0EQRJy1g4aWORYXT33NMhxu4ewtMrm2c+V5rNLA0CLLmWcZadAqXyF4//DV7
+         yypA9QX5TRRSMA0sWRSC7p9bKqf16O6K353YLEWx0fpgFzMBnTi+HxlttBIiYsyn/jC4
+         A6QQ==
+X-Gm-Message-State: AOAM532DgSmJaNwcoLo6yctxZK0qUFDa+Ua7EVzb3dUrGqeIC6TZGfwV
+	S2z5JKmCBJiNlRLF63F1RTU+cdXG0peMsp0pIQt2xyuH8Zg=
+X-Google-Smtp-Source: ABdhPJyhORI6sZXIgW/Xk+XbGM2Zn/QSVukoxjHr1nqWwP9yldGJCKkAdzekUTA8GA/1km2HI64qbIzxwmfxhkEkISM=
+X-Received: by 2002:a9d:344b:: with SMTP id v69mr37654otb.41.1622624999207;
+ Wed, 02 Jun 2021 02:09:59 -0700 (PDT)
+MIME-Version: 1.0
+From: PhoenixZone Technologies <thephoenixzone@gmail.com>
+Date: Wed, 2 Jun 2021 14:39:47 +0530
+Message-ID: <CAGbSqeoiRHU=KiAyEV4qsCEWhnUqsv2qzAe4Kamt3vUc_sPLTg@mail.gmail.com>
+Subject: Email working ot not
+To: testingprojects2021.22@gmail.com
+Content-Type: multipart/alternative; boundary="000000000000ae764605c3c4d2a7"
+
+--000000000000ae764605c3c4d2a7
+Content-Type: text/plain; charset="UTF-8"
+
+i am checking email is working or not
+
+-- 
+
+
+
+"Good Service Isn't Accident, Its our Habit!"
+*Thanks and Regards,*
+*PhoenixZone Technologies Pvt. Ltd. <http://www.thephoenixzone.com>*
+*Contact: 7350706868/7350456969*
+*Address: *S. No. 46, Room No. 3/1248, Sagar Park Society, Lane No. 3 ,
+Near Tata Guard Room Water Tank, Old Mundhava Road, Vadgaon Sheri, Pune
+411014
+*Website:** www.thephoenixzone.com <http://www.thephoenixzone.com>  | *
+*Facebook:** https://www.facebook.com/thephoenixzone/
+<https://www.facebook.com/thephoenixzone/>*
+
+--000000000000ae764605c3c4d2a7
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">i am checking email is working or not<br clear=3D"all"><di=
+v><br></div>-- <br><div dir=3D"ltr" class=3D"gmail_signature" data-smartmai=
+l=3D"gmail_signature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div><div dir=
+=3D"ltr"><div><div dir=3D"ltr"><div><div dir=3D"ltr"><div dir=3D"ltr"><div =
+dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"=
+ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><d=
+iv dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=
+=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr"><div dir=3D"ltr=
+"><span><div dir=3D"ltr"><font face=3D"Monotype Corsiva" size=3D"1"></font>=
+<font face=3D"Monotype Corsiva" size=3D"1"></font><div style=3D"font-family=
+:Calibri;font-size:x-small"><br></div><div style=3D"font-family:Calibri;fon=
+t-size:x-small"><br></div><div style=3D"font-family:Calibri;font-size:x-sma=
+ll"><br></div><div style=3D"font-family:Calibri"><font face=3D"Monotype Cor=
+siva"><span style=3D"color:rgb(255,0,255)"><span style=3D"background-color:=
+rgb(0,255,255)">&quot;Good Service Isn&#39;t Accident, Its our Habit!&quot;=
+=C2=A0</span></span><b><br>Thanks and Regards,</b></font></div>
+<div style=3D"font-family:Calibri"><font face=3D"Monotype Corsiva" size=3D"=
+4"><b><a href=3D"http://www.thephoenixzone.com" target=3D"_blank">PhoenixZo=
+ne Technologies Pvt. Ltd.</a></b></font></div><div style=3D"font-family:Cal=
+ibri"><b style=3D"font-family:&quot;Monotype Corsiva&quot;">Contact: 735070=
+6868/7350456969</b></div><div><font face=3D"Monotype Corsiva" style=3D"font=
+-family:Calibri"><b>Address:=C2=A0</b></font><font face=3D"times new roman,=
+ serif" style=3D"background-color:rgb(238,238,238)" color=3D"#3d85c6"><span=
+ style=3D"font-size:14px">S. No. 46, Room No. 3/1248, Sagar Park Society, L=
+ane No. 3 , Near Tata Guard Room Water Tank, Old Mundhava=C2=A0Road, Vadgao=
+n Sheri, Pune 411014</span>=C2=A0</font></div></div></span><div><div dir=3D=
+"ltr"><div dir=3D"ltr"><div><div><b style=3D"font-family:&quot;Monotype Cor=
+siva&quot;">Website:</b><b><font face=3D"tahoma, sans-serif"><font color=3D=
+"#3d85c6">=C2=A0</font><a href=3D"http://www.thephoenixzone.com" style=3D"c=
+olor:rgb(61,133,198);font-size:x-small" target=3D"_blank">www.thephoenixzon=
+e.com</a><font size=3D"1"><font color=3D"#3d85c6">=C2=A0</font><font color=
+=3D"#ff0000"> |=C2=A0</font></font></font></b><b style=3D"font-family:&quot=
+;Monotype Corsiva&quot;">Facebook:</b><b><font face=3D"tahoma, sans-serif">=
+<font color=3D"#3d85c6">=C2=A0</font><a href=3D"https://www.facebook.com/th=
+ephoenixzone/" target=3D"_blank"><font color=3D"#0000ff"><font size=3D"1">h=
+ttps://www.facebook.com/thephoenixzone/</font></font></a></font></b></div><=
+/div></div></div></div></div></div></div></div></div></div></div></div></di=
+v></div></div></div></div></div></div></div></div></div></div></div></div><=
+/div></div></div></div></div></div></div></div></div>
+
+--000000000000ae764605c3c4d2a7--
